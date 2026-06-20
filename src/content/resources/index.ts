@@ -1,8 +1,10 @@
+import type { FeedPostDetail } from "./types";
+
 export type { FeedPost, FeedPostDetail } from "./types";
 export { allPostSummaries, carouselPosts, CAROUSEL_MAX } from "./summaries";
 
-/** Homepage carousel - max 5 displayed */
-export const carouselPosts: FeedPost[] = [
+/** Full post archive (carousel + additional posts for Resources page) */
+export const allPosts: FeedPostDetail[] = [
   {
     id: "news-1",
     title: "How Bhaavam Uses Education to Reduce Mental Health Stigma",
@@ -58,11 +60,6 @@ export const carouselPosts: FeedPost[] = [
     content:
       "Awareness content is one starting point. Bhaavam's larger goal is to help build a wider ecosystem of care through partnerships, volunteers, events, and more direct pathways to support.\n\n### What comes next\n1. **Partnerships** with aligned organizations and professionals.\n2. **Volunteer energy** that strengthens campaigns and community efforts.\n3. **Events and conversations** that turn awareness into participation.",
   },
-];
-
-/** Full post archive (carousel + additional posts for Resources page) */
-export const allPosts: FeedPost[] = [
-  ...carouselPosts,
   {
     id: "blog-1",
     title: "Healing Takes Time: Embracing the Slow Process",
@@ -130,5 +127,3 @@ export const allPosts: FeedPost[] = [
       "The cinematic classic *Good Will Hunting* portrays the raw, sometimes painful process of healing from childhood trauma through therapy and trust. It reminds us that our past does not define our future, and that opening up to someone else can set us free.\n\n### Major Takeaways\n* **'It's Not Your Fault'**: The iconic breakthrough scene highlights the critical step of releasing self-blame for trauma that was beyond our control.\n* **The Power of Therapeutic Trust**: Healing cannot be forced. It requires a safe, non-judgmental space built on mutual respect and honesty.\n* **Growth Takes Time**: Moving past defenses and opening up to love and vulnerability is a gradual process. Be patient with your own evolution.",
   },
 ];
-
-export const CAROUSEL_MAX = 5;

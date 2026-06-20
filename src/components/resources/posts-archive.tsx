@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { allPosts, type FeedPost } from "@/content/resources";
+import { allPosts, type FeedPostDetail } from "@/content/resources";
 import { FadeIn } from "@/components/motion/fade-in";
 import {
   Card,
@@ -15,7 +15,7 @@ import { Calendar, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function PostsArchive() {
-  const [selectedPost, setSelectedPost] = useState<FeedPost | null>(null);
+  const [selectedPost, setSelectedPost] = useState<FeedPostDetail | null>(null);
 
   // Renders the detailed text inside the modal beautifully (handling lists and headers)
   const renderModalContent = (text: string) => {
