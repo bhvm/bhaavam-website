@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navigation, siteConfig } from "@/data/site";
+import { navigation, siteConfig } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -21,13 +21,13 @@ export function Header() {
           className="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:gap-4"
           aria-label={`${siteConfig.name} — Home`}
         >
-          <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-white/30 ring-offset-2 ring-offset-plum sm:h-14 sm:w-14">
+          <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-white/35 bg-white p-0.5 shadow-sm shadow-black/10 sm:h-16 sm:w-16">
             <Image
-              src="/icon.jpeg"
+              src="/images/brand/icon.jpeg"
               alt=""
               fill
-              className="object-cover"
-              sizes="(max-width: 640px) 48px, 56px"
+              className="scale-110 object-contain"
+              sizes="(max-width: 640px) 56px, 64px"
               priority
             />
           </span>
@@ -65,7 +65,7 @@ export function Header() {
 
         <div className="hidden md:block">
           <Button asChild size="default" variant="crisis">
-            <Link href="/contact?intent=support">Get Support</Link>
+            <Link href="/support">Get Support</Link>
           </Button>
         </div>
 
@@ -108,7 +108,7 @@ export function Header() {
           <li className="pt-2">
             <Button asChild className="w-full" variant="crisis">
               <Link
-                href="/contact?intent=support"
+                href="/support"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Support Now

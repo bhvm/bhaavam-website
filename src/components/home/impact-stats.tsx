@@ -1,4 +1,4 @@
-import { impactStats } from "@/data/site";
+import { impactStats } from "@/content/site";
 import { FadeIn } from "@/components/motion/fade-in";
 import { StatIcon } from "@/components/icons/pillar-icons";
 
@@ -17,11 +17,11 @@ export function ImpactStats() {
             Our impact, together
           </h2>
           <p className="mt-2 text-ink-muted">
-            Public metrics from our Instagram community — updated as we grow.
+            A snapshot of the reach, participation, and momentum behind Bhaavam.
           </p>
         </FadeIn>
 
-        <dl className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
+        <dl className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-5 lg:gap-8">
           {impactStats.map((stat, index) => (
             <FadeIn key={stat.label} delay={index * 0.06}>
               <div className="flex flex-col items-center rounded-2xl bg-white/80 px-4 py-8 text-center shadow-sm ring-1 ring-blush-100/60">

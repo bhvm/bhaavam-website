@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { allPosts, type FeedPost } from "@/data/posts";
+import { allPosts, type FeedPost } from "@/content/resources";
 import { FadeIn } from "@/components/motion/fade-in";
 import {
   Card,
@@ -86,11 +86,11 @@ export function PostsArchive() {
             id="archive-heading"
             className="font-display text-3xl font-semibold text-ink sm:text-4xl"
           >
-            All posts & resources
+            All news & blogs
           </h2>
           <p className="mt-3 max-w-2xl text-ink-muted">
-            Browse our growing library of blogs, movie/book recommendations, 
-            self-care toolkits, and mental health resources.
+            Browse Bhaavam&apos;s growing library of updates, blog posts, awareness
+            stories, and educational resources.
           </p>
         </div>
       </FadeIn>
@@ -117,7 +117,7 @@ export function PostsArchive() {
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <span className="inline-flex rounded-full bg-blush-50 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-blush-700">
-                        {post.category === "Article" ? "Blog Article" : post.category}
+                        {post.category === "Blog" ? "Blog Article" : post.category}
                       </span>
                     </div>
                     <CardTitle className="mt-2 text-lg leading-snug group-hover:text-blush-700 transition-colors">
@@ -137,7 +137,7 @@ export function PostsArchive() {
                         })}
                       </span>
                       <span className="font-semibold text-blush-600 group-hover:underline">
-                        Read {post.category === "Article" ? "Article" : "Resource"} →
+                        Read {post.category === "Blog" ? "Article" : "More"} →
                       </span>
                     </div>
                   </CardContent>
@@ -196,7 +196,7 @@ export function PostsArchive() {
               {/* Meta tags */}
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <span className="inline-flex rounded-full bg-blush-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blush-800">
-                  {selectedPost.category === "Article" ? "Blog Article" : selectedPost.category}
+                  {selectedPost.category === "Blog" ? "Blog Article" : selectedPost.category}
                 </span>
                 <span className="flex items-center gap-1.5 text-sm text-ink-light">
                   <Calendar className="h-4 w-4" />

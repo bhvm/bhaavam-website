@@ -1,0 +1,7 @@
+<svg width="480" height="560" viewBox="0 0 480 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="560" rx="40" fill="#FAF7F2"/>
+  <circle cx="240" cy="190" r="96" fill="#EEC9E4"/>
+  <path d="M240 130C272.033 130 298 155.967 298 188C298 220.033 272.033 246 240 246C207.967 246 182 220.033 182 188C182 155.967 207.967 130 240 130Z" fill="#9B3D87"/>
+  <path d="M128 444C128 370.994 187.994 312 261 312H219C292.006 312 352 370.994 352 444V456H128V444Z" fill="#C767A7"/>
+  <text x="240" y="518" text-anchor="middle" fill="#702963" font-family="Arial, sans-serif" font-size="28" font-weight="700">Founder Photo</text>
+</svg>

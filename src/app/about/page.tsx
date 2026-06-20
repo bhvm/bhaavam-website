@@ -1,74 +1,91 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/data/site";
-import { instagramProfile } from "@/data/instagram";
+import { aboutOverview, founders, visionContent } from "@/content/about";
+import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "The story and mission of Bhaavam Foundation — mental health awareness through compassion and conversation.",
+    "Learn about Bhaavam Foundation, our vision, and the people building it.",
 };
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-24">
-      <h1 className="font-display text-4xl font-semibold text-ink sm:text-5xl">About Us</h1>
+    <main id="main-content" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
+      <h1 className="font-display text-4xl font-semibold text-ink sm:text-5xl">
+        About Us
+      </h1>
 
-      <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-        <strong className="font-medium text-ink">{siteConfig.name}</strong>{" "}
-        {instagramProfile.missionLine.toLowerCase()}
-      </p>
+      <section className="mt-10 rounded-3xl border border-blush-100 bg-white p-8 shadow-sm">
+        <h2 className="font-display text-2xl font-semibold text-ink">
+          About Us
+        </h2>
+        <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+          {aboutOverview.intro}
+        </p>
+        <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+          {aboutOverview.body}
+        </p>
+      </section>
 
-      <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-        {siteConfig.nameMeaning} Through our Instagram{" "}
-        {siteConfig.instagramHandle}, we share mental health insights, book and
-        film recommendations, and messages that remind people: healing takes
-        time, and asking for help is a courageous step.
-      </p>
+      <section className="mt-8 rounded-3xl border border-blush-100 bg-blush-50/50 p-8">
+        <h2 className="font-display text-2xl font-semibold text-ink">
+          {visionContent.headline}
+        </h2>
+        <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+          {visionContent.body}
+        </p>
+      </section>
 
-      <blockquote className="mt-8 border-l-4 border-blush-300 pl-6 text-lg italic text-ink-muted">
-        &ldquo;What mental health needs is more sunlight, more candor and more
-        unashamed conversation.&rdquo;
-      </blockquote>
-      <p className="mt-2 text-sm text-ink-light">
-        — Shared on @bhaavam_foundation
-      </p>
+      <section className="mt-8">
+        <h2 className="font-display text-2xl font-semibold text-ink">
+          Founders
+        </h2>
+        <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-muted">
+          This section is structured to grow with the team. Replace the sample
+          profiles with founder names, roles, photos, and biographies as they
+          become available.
+        </p>
 
-      <h2 className="mt-12 font-display text-xl font-semibold text-ink">
-        Core values
-      </h2>
-      <ul className="mt-4 space-y-3 text-ink-muted">
-        <li>
-          <strong className="text-ink">Empathy</strong> — Every emotion has a
-          purpose.
-        </li>
-        <li>
-          <strong className="text-ink">Confidentiality</strong> — Safe spaces
-          for honest sharing.
-        </li>
-        <li>
-          <strong className="text-ink">Accessibility</strong> — Free resources
-          and approachable language.
-        </li>
-        <li>
-          <strong className="text-ink">Community</strong> — Growing together on
-          and beyond Instagram.
-        </li>
-      </ul>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {founders.map((founder) => (
+            <article
+              key={founder.name}
+              className="overflow-hidden rounded-3xl border border-blush-100 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[4/3] bg-blush-50">
+                <Image
+                  src={founder.image}
+                  alt={founder.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-2xl font-semibold text-ink">
+                  {founder.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium uppercase tracking-wide text-blush-700">
+                  {founder.title}
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-ink-muted">
+                  {founder.bio}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <div className="mt-10 flex flex-wrap gap-4">
         <Button asChild>
-          <a
-            href={instagramProfile.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Follow on Instagram
-          </a>
+          <Link href="/get-involved">Get Involved</Link>
         </Button>
         <Button asChild variant="secondary">
-          <Link href="/">Back to Home</Link>
+          <a href={`mailto:${siteConfig.email}`}>Email Us</a>
         </Button>
       </div>
     </main>

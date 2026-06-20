@@ -1,4 +1,4 @@
-import { missionPillars } from "@/data/site";
+import { missionPillars } from "@/content/site";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PillarIcon } from "@/components/icons/pillar-icons";
 import {
@@ -24,11 +24,11 @@ export function MissionSection() {
             id="mission-heading"
             className="mt-4 font-display text-3xl font-semibold text-ink text-balance sm:text-4xl md:text-5xl"
           >
-            More sunlight, more candor, more unashamed conversation
+            Awareness, education, community, and stigma reduction
           </h2>
           <p className="mt-5 text-xl leading-relaxed text-ink-muted">
-            These pillars guide what we share on @bhaavam_foundation and the
-            support we are building for our community.
+            These focus areas guide how Bhaavam builds understanding, support,
+            and more compassionate conversations around mental health.
           </p>
         </FadeIn>
 

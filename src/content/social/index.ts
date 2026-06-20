@@ -10,7 +10,7 @@ export const instagramProfile = {
   followers: 34,
   postsCount: 6,
   following: 0,
-  /** Public profile image (Instagram CDN — may expire; replace with local asset in production) */
+  /** Public profile image (Instagram CDN - may expire; replace with local asset in production) */
   profileImageUrl:
     "https://scontent.cdninstagram.com/v/t51.2885-19/472259486_3833065950278041_2646340039007686539_n.jpg?stp=dst-jpg_s320x320_tt6&_nc_cat=108&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=9ImqLbK-lTgQ7kNvwGMeQ70&_nc_oc=AdqGnHJuhPq36uHCPJ9IaEqyvHPS13n3YyfhuUGtUDU4SFpm_EY7Vlgw4H4TQKtPVR9PhY6iTlS8tXnnojt6Koj3&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=7b689&oh=00_Af-ox2ep-kAbmh_s8Gz1jPeIhO8OGM2f_CI_PpsQmluNkQ&oe=6A21CB1A",
   /** Recurring mission line from their posts */
@@ -31,6 +31,15 @@ export interface InstagramPost {
   title: string;
   excerpt: string;
   hashtags: string[];
+}
+
+export interface SocialChannel {
+  platform: string;
+  handle: string;
+  description: string;
+  href: string | null;
+  external?: boolean;
+  icon: "instagram" | "linkedin" | "facebook" | "youtube";
 }
 
 /** Latest posts from @bhaavam_foundation (newest first) */
@@ -95,7 +104,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "book",
     title: "The Perks of Being a Wallflower",
     excerpt:
-      "We accept the love we think we deserve — a heartfelt coming-of-age story about friendship, love, and self-discovery.",
+      "We accept the love we think we deserve - a heartfelt coming-of-age story about friendship, love, and self-discovery.",
     hashtags: [
       "mentalhealthmatters",
       "BookRecommendation",
@@ -136,5 +145,41 @@ export const mediaRecommendations = [
     title: "The Perks of Being a Wallflower",
     type: "book" as const,
     theme: "Friendship, love, and self-discovery",
+  },
+] as const;
+
+export const socialChannels: SocialChannel[] = [
+  {
+    platform: "Instagram",
+    handle: "@bhaavam_foundation",
+    description:
+      "Our most active channel for awareness posts, recommendations, and day-to-day updates.",
+    href: instagramProfile.url,
+    external: true,
+    icon: "instagram",
+  },
+  {
+    platform: "LinkedIn",
+    handle: "Launching soon",
+    description:
+      "This will be used for partnerships, institutional updates, and professional opportunities.",
+    href: null,
+    icon: "linkedin",
+  },
+  {
+    platform: "Facebook",
+    handle: "Launching soon",
+    description:
+      "A future space for wider community outreach, event reminders, and shareable resources.",
+    href: null,
+    icon: "facebook",
+  },
+  {
+    platform: "YouTube",
+    handle: "Launching soon",
+    description:
+      "Planned for longer-form conversations, awareness explainers, and event recordings.",
+    href: null,
+    icon: "youtube",
   },
 ] as const;

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { heroContent, siteConfig } from "@/data/site";
+import { ArrowRight } from "lucide-react";
+import { heroContent } from "@/content/site";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -52,17 +52,10 @@ export function HeroSection() {
           initial="hidden"
           animate="show"
         >
-          <motion.div variants={item} className="mt-4">
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-blush-200 bg-white/80 px-5 py-2.5 text-base font-medium text-blush-700 shadow-sm sm:text-lg sm:px-6 sm:py-3">
-              <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
-              {siteConfig.tagline}
-            </span>
-          </motion.div>
-
           <motion.h1
             id="hero-heading"
             variants={item}
-            className="mt-10 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-ink text-balance sm:text-5xl md:text-6xl lg:text-7xl"
+            className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-ink text-balance sm:text-5xl md:text-6xl lg:text-7xl"
           >
             {heroContent.headline}
           </motion.h1>
@@ -74,10 +67,7 @@ export function HeroSection() {
             {heroContent.subheadline}
           </motion.p>
 
-          <motion.div
-            variants={item}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
+          <motion.div variants={item} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href={heroContent.primaryCta.href}>
                 {heroContent.primaryCta.label}
@@ -106,14 +96,6 @@ export function HeroSection() {
               )}
             </Button>
           </motion.div>
-
-          <motion.p
-            variants={item}
-            className="mt-10 text-base text-ink-light sm:text-lg"
-          >
-            Book & film picks · Mental health insights ·{" "}
-            {siteConfig.instagramHandle}
-          </motion.p>
         </motion.div>
       </div>
     </section>

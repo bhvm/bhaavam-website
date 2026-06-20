@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { CAROUSEL_MAX, carouselPosts } from "@/data/posts";
+import { CAROUSEL_MAX, carouselPosts } from "@/content/resources";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/motion/fade-in";
 import { cn } from "@/lib/utils";
@@ -38,13 +38,13 @@ export function PostsCarousel() {
         <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-base font-semibold uppercase tracking-wider text-blush-600 sm:text-lg">
-              Latest updates
+              News & blogs
             </p>
             <h2
               id="carousel-heading"
               className="mt-4 font-display text-3xl font-semibold text-ink text-balance sm:text-4xl md:text-5xl"
             >
-              Stories & resources for your wellbeing
+              Stories, updates, and ideas worth sharing
             </h2>
           </div>
           <p className="text-sm text-ink-muted" aria-live="polite">
@@ -101,6 +101,12 @@ export function PostsCarousel() {
                       year: "numeric",
                     })}
                   </time>
+                  <Button asChild variant="ghost" className="mt-6 w-fit px-0 text-blush-700 hover:bg-transparent hover:text-blush-600">
+                    <Link href="/news-and-blogs#all-posts">
+                      Read more
+                      <ArrowRight className="h-4 w-4" aria-hidden />
+                    </Link>
+                  </Button>
                 </div>
               </motion.article>
             </AnimatePresence>
@@ -153,7 +159,7 @@ export function PostsCarousel() {
 
         <div className="mt-10 flex justify-center">
           <Button asChild size="lg" variant="default">
-            <Link href="/resources#all-posts">View More</Link>
+            <Link href="/news-and-blogs#all-posts">View More</Link>
           </Button>
         </div>
       </div>

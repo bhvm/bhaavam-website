@@ -5,8 +5,8 @@ import {
   instagramPosts,
   instagramProfile,
   type InstagramPostType,
-} from "@/data/instagram";
-import { siteConfig } from "@/data/site";
+} from "@/content/social";
+import { siteConfig } from "@/content/site";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import {
@@ -50,7 +50,7 @@ export function InstagramSection() {
               <div className="flex items-center gap-4">
                 <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full ring-2 ring-blush-200 ring-offset-2 ring-offset-cream sm:h-28 sm:w-28">
                   <Image
-                    src="/icon.jpeg"
+                    src="/images/brand/icon.jpeg"
                     alt={`${instagramProfile.displayName} logo`}
                     fill
                     className="object-cover"

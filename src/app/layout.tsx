@@ -1,19 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Outfit } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { siteConfig } from "@/data/site";
+import { siteConfig } from "@/content/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -50,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${outfit.variable}`}>
+    <html lang="en" className={dmSans.variable}>
       <body className="min-h-screen font-sans flex flex-col">
         {/* Skip link for keyboard users */}
         <a

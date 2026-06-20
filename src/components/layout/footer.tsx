@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
-import { navigation, siteConfig, socialLinks } from "@/data/site";
+import { navigation, siteConfig, socialLinks } from "@/content/site";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,13 +15,13 @@ export function Footer() {
               href="/"
               className="inline-flex items-center gap-3 font-display text-2xl font-semibold text-ink sm:text-3xl"
             >
-              <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-blush-200 sm:h-14 sm:w-14">
+              <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-blush-200 bg-white p-0.5 shadow-sm shadow-blush-100/60 sm:h-16 sm:w-16">
                 <Image
-                  src="/icon.jpeg"
+                  src="/images/brand/icon.jpeg"
                   alt=""
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 48px, 56px"
+                  className="scale-110 object-contain"
+                  sizes="(max-width: 640px) 56px, 64px"
                 />
               </span>
               {siteConfig.name}
@@ -76,6 +76,14 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/follow-us"
+                  className="text-sm text-ink-muted hover:text-blush-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush-400 rounded"
+                >
+                  Explore all channels
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
